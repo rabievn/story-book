@@ -12,7 +12,7 @@ function App() {
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
 
-                <Input size="small" placeholder="Small size"/>
+                <Input size="large" placeholder="Small size"/>
             </header>
         </div>
     );

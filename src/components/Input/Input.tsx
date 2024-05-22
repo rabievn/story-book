@@ -10,7 +10,7 @@ type InputPropsType = {
 
 const Input: React.FC<InputPropsType> = ({ size = "medium", ...rest }) => {
     return (
-        <input className={`button ${size}`} {...rest} />
+        <input className={`input ${size}`} {...rest} />
     );
 };
 
