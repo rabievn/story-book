@@ -2,6 +2,7 @@ import React from "react";
 import {Preview} from '@storybook/react';
 import Center from "../src/components/Center/Center";
 import {ChakraProvider, CSSReset, theme} from "@chakra-ui/react";
+import {withConsole} from '@storybook/addon-console';
 
 const preview: Preview = {
     parameters: {
@@ -18,6 +19,7 @@ const preview: Preview = {
     },
     tags: ['autodocs'],
     decorators: [
+        (storyFn, context) => withConsole()(storyFn)(context),
         (Story: any) => (
             <Center>
                 <ChakraProvider theme={theme}>
