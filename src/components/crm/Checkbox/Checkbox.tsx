@@ -1,15 +1,18 @@
-import React, {InputHTMLAttributes} from 'react';
+import React from 'react';
+import './Checkbox.css';
 
 type CheckboxSize = 'small' | 'medium' | 'large';
+type CheckboxColor =
+    'blue' | 'gray' | 'green' | 'violet'
 
 type CheckboxPropsType = {
-    size?: CheckboxSize
-    placeholder: string
-} | InputHTMLAttributes<HTMLInputElement>;
+    size: CheckboxSize,
+    color: CheckboxColor,
+};
 
-const Checkbox: React.FC<CheckboxPropsType> = ({ size = "medium", ...rest }) => {
+const Checkbox: React.FC<CheckboxPropsType> = ({size ,color, ...rest}) => {
     return (
-        <input className={`input ${size}`} {...rest} />
+        <input type="checkbox" className={`checkbox ${size} ${color}`} {...rest} />
     );
 };
 

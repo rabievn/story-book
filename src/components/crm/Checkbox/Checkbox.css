@@ -1,0 +1,116 @@
+:root {
+    --green: #81D0B1;
+    --dark-green: #114A33;
+    --blue: #1FA9CD;
+    --dark-blue: #006981;
+    --violet: #8773DD;
+    --dark-violet: #4C28D1;
+    --gray: #A0A0A0;
+    --dark-gray: #555555;
+    --small-size: 23px;
+    --medium-size: 28px;
+    --large-size: 30px;
+    --checkbox-bg: var(--gray);
+    --checkbox-border: var(--gray);
+    --checkbox-bg-checked: var(--blue);
+}
+
+/* Dark mode styles can be uncommented for testing
+@media (prefers-color-scheme: dark) {
+    :root {
+        --checkbox-bg: var(--dark-gray);
+        --checkbox-border: var(--dark-gray);
+        --checkbox-bg-checked: var(--dark-blue);
+    }
+}
+*/
+
+.checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1.4px solid var(--checkbox-border);
+    background-color: transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.checkbox:checked {
+    background-color: var(--checkbox-bg-checked);
+    border-color: var(--checkbox-bg-checked);
+}
+
+.checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background: white;
+    clip-path: polygon(14% 44%, 0% 30%, 3% 25%, 14% 31%, 32% 50%, 80% 2%, 86% 5%, 32% 69%);
+    transform: translate(-50%, -50%);
+}
+
+.checkbox.small {
+    width: var(--small-size);
+    height: var(--small-size);
+}
+
+.checkbox.medium {
+    width: var(--medium-size);
+    height: var(--medium-size);
+}
+
+.checkbox.large {
+    width: var(--large-size);
+    height: var(--large-size);
+}
+
+/* Color variants */
+.checkbox.green {
+    --checkbox-border: var(--green);
+    --checkbox-bg-checked: var(--green);
+}
+
+.checkbox.blue {
+    --checkbox-border: var(--blue);
+    --checkbox-bg-checked: var(--blue);
+}
+
+.checkbox.violet {
+    --checkbox-border: var(--violet);
+    --checkbox-bg-checked: var(--violet);
+}
+
+.checkbox.gray {
+    --checkbox-border: var(--gray);
+    --checkbox-bg-checked: var(--gray);
+}
+
+/* Dark mode color variants */
+/*
+@media (prefers-color-scheme: dark) {
+    .checkbox.green {
+        --checkbox-bg-checked: var(--dark-green);
+    }
+
+    .checkbox.blue {
+        --checkbox-bg-checked: var(--dark-blue);
+    }
+
+    .checkbox.violet {
+        --checkbox-bg-checked: var(--dark-violet);
+    }
+
+    .checkbox.gray {
+        --checkbox-bg-checked: var(--dark-gray);
+    }
+}
+*/

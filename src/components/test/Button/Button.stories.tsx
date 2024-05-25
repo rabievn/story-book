@@ -13,7 +13,6 @@ export default {
             options: ['primary', 'success', 'danger'],
             control: {
                 type: 'radio',
-
             }
         }
     }
