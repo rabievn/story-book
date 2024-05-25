@@ -1,6 +1,6 @@
 import React from "react";
 import {Preview} from '@storybook/react';
-import Center from "../src/components/Center/Center";
+import Center from "../src/components/test/Center/Center";
 import {ChakraProvider, CSSReset, theme} from "@chakra-ui/react";
 import {withConsole} from '@storybook/addon-console';
 
