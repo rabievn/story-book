@@ -7,6 +7,7 @@
     --dark-violet: #4C28D1;
     --gray: #A0A0A0;
     --dark-gray: #555555;
+    --white: #FFFFFF;
     --small-size: 23px;
     --medium-size: 28px;
     --large-size: 30px;
@@ -23,7 +24,26 @@
         --checkbox-bg-checked: var(--dark-blue);
     }
 }
-*/
+/* Dark mode color variants */
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    .checkbox.green {*/
+/*        --checkbox-bg-checked: var(--dark-green);*/
+/*    }*/
+
+/*    .checkbox.blue {*/
+/*        --checkbox-bg-checked: var(--dark-blue);*/
+/*    }*/
+
+/*    .checkbox.violet {*/
+/*        --checkbox-bg-checked: var(--dark-violet);*/
+/*    }*/
+
+/*    .checkbox.gray {*/
+/*        --checkbox-bg-checked: var(--dark-gray);*/
+/*    }*/
+/*}*/
+
 
 .checkbox {
     -webkit-appearance: none;
@@ -47,15 +67,15 @@
 }
 
 .checkbox:checked::after {
-    content: "";
+    content: '';
     position: absolute;
-    top: 50%;
     left: 50%;
-    width: 50%;
+    top: 43%;
+    width: 20%;
     height: 50%;
-    background: white;
-    clip-path: polygon(14% 44%, 0% 30%, 3% 25%, 14% 31%, 32% 50%, 80% 2%, 86% 5%, 32% 69%);
-    transform: translate(-50%, -50%);
+    border: solid var(--white);
+    border-width: 0 0.15rem 0.15rem 0;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .checkbox.small {
@@ -94,23 +114,23 @@
     --checkbox-bg-checked: var(--gray);
 }
 
-/* Dark mode color variants */
-/*
-@media (prefers-color-scheme: dark) {
-    .checkbox.green {
-        --checkbox-bg-checked: var(--dark-green);
-    }
-
-    .checkbox.blue {
-        --checkbox-bg-checked: var(--dark-blue);
-    }
-
-    .checkbox.violet {
-        --checkbox-bg-checked: var(--dark-violet);
-    }
-
-    .checkbox.gray {
-        --checkbox-bg-checked: var(--dark-gray);
-    }
+/* Active state styling */
+.checkbox.active {
+    background-color: var(--white);
 }
-*/
+
+.checkbox.active.green:checked::after {
+    border-color: var(--green);
+}
+
+.checkbox.active.blue:checked::after {
+    border-color: var(--blue);
+}
+
+.checkbox.active.violet:checked::after {
+    border-color: var(--violet);
+}
+
+.checkbox.active.gray:checked::after {
+    border-color: var(--gray);
+}
