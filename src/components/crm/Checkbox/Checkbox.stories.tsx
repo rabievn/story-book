@@ -57,7 +57,21 @@ SmallBlue.args = {
     color: 'blue',
     size: 'small',
 };
-
+export const LargeBlueLight = Template.bind({});
+LargeBlueLight.args = {
+    color: 'light-blue',
+    size: 'large',
+};
+export const BlueLight = Template.bind({});
+BlueLight.args = {
+    color: 'light-blue',
+    size: 'medium',
+};
+export const SmallBlueLight = Template.bind({});
+SmallBlueLight.args = {
+    color: 'light-blue',
+    size: 'small',
+};
 export const LargeViolet = Template.bind({});
 LargeViolet.args = {
     color: 'violet',
@@ -73,4 +87,38 @@ SmallViolet.args = {
     color: 'violet',
     size: 'small',
 };
+
+export const LargePink = Template.bind({});
+LargePink.args = {
+    color: 'pink',
+    size: 'large',
+};
+export const Pink = Template.bind({});
+Pink.args = {
+    color: 'pink',
+    size: 'medium',
+};
+export const SmallPink = Template.bind({});
+SmallPink.args = {
+    color: 'pink',
+    size: 'small',
+};
+export const LargePinkLight = Template.bind({});
+LargePinkLight.args = {
+    color: 'light-pink',
+    size: 'large',
+};
+export const PinkLight = Template.bind({});
+PinkLight.args = {
+    color: 'light-pink',
+    size: 'medium',
+};
+export const SmallPinkLight = Template.bind({});
+SmallPinkLight.args = {
+    color: 'light-pink',
+    size: 'small',
+};
+
+
+
 
