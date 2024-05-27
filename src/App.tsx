@@ -12,7 +12,7 @@ function App() {
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
-                <Checkbox size="medium" color="violet"/>
+                <Checkbox size="medium" color="violet" active={true}/>
                 <Input size="large" placeholder="Small size"/>
             </header>
         </div>
