@@ -1,0 +1,21 @@
+:root {
+    --green: #81D0B1;
+    --dark-green: #114A33;
+    --blue: #1FA9CD;
+    --dark-blue: #006981;
+    --light-blue: #26C2EF;
+    --violet: #8773DD;
+    --dark-violet: #4C28D1;
+    --pink: #DB4C8C;
+    --light-pink: #E37FA5;
+    --gray: #A0A0A0;
+    --dark-gray: #555555;
+    --white: #FFFFFF;
+    --small-size: 23px;
+    --medium-size: 28px;
+    --large-size: 30px;
+    --checkbox-bg: var(--gray);
+    --checkbox-border: var(--gray);
+    --checkbox-bg-checked: var(--gray);
+}
+

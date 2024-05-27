@@ -5,7 +5,6 @@ import Checkbox from "./Checkbox";
 export default {
     title: "Checkbox",
     component: Checkbox,
-
 } as Meta<typeof Checkbox>;
 
 const Template: StoryFn<typeof Checkbox> = (args) => <Checkbox {...args} />
