@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import style from './Comment.module.scss';
 import Checkbox from '../Checkbox/Checkbox';
 
@@ -9,15 +9,16 @@ type CommentPropsType = {
     imgSrc: string
     name: string
     defaultChecked: boolean
+    date: string
 };
 
 const Comment: React.FC<CommentPropsType> = ({
-                                                 isStatusExist,
                                                  numeric = 1,
                                                  text = "Текст комментария, текст комментария, текст комментария, текст комментария, текст комментария,\nтекст комментария,",
                                                  imgSrc,
                                                  name = "Андреев В. И.",
-                                                 defaultChecked = false
+                                                 defaultChecked = false,
+                                                 date = "16.11.2024"
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
 
@@ -35,9 +36,9 @@ const Comment: React.FC<CommentPropsType> = ({
                     <div className={`${style.comment__centerText}`}>
                         {text}
                     </div>
-                    {isStatusExist && <div className={`${style.comment__centerStatus}`}>
+                     <button className={`${style.comment__centerStatus}`}>
                         Status
-                    </div>}
+                    </button>
                 </div>
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
@@ -45,7 +46,8 @@ const Comment: React.FC<CommentPropsType> = ({
                         {name}
                     </div>
                     <div className={`${style.comment__centerBottomDate}`}>
-                        date
+                        {date}
+                        {/*<img src={} alt="Pencil icon"/>*/}
                     </div>
                 </div>
             </div>
@@ -60,12 +62,14 @@ const Comment: React.FC<CommentPropsType> = ({
                     />
                 </div>
                 <div className={`${style.comment__rightIcons}`}>
-                    <div>
+                    <button>
+                        {/*<img src={} alt="Garbage icon"/>*/}
                         1
-                    </div>
-                    <div>
+                    </button>
+                    <button>
+                        {/*<img src={} alt="Pencil icon"/>*/}
                         2
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
