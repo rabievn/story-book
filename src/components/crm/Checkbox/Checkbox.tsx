@@ -8,11 +8,19 @@ type CheckboxPropsType = {
     size: CheckboxSize
     color: CheckboxColor
     active: boolean
+    checked: boolean
+    onChange: () => void
 };
 
-const Checkbox: React.FC<CheckboxPropsType> = ({size, color, active, ...rest}) => {
+const Checkbox: React.FC<CheckboxPropsType> = ({size, color, active, checked, onChange, ...rest}) => {
     return (
-        <input type="checkbox" className={`checkbox ${size} ${color} ${active ? 'active' : ''}`} {...rest} />
+        <input
+            type="checkbox"
+            checked={checked}
+            onChange={onChange}
+            className={`checkbox ${size} ${color} ${active ? 'active' : ''}`}
+            {...rest}
+        />
     );
 };
 
