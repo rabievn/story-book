@@ -3,7 +3,15 @@ $number-color: rgba(0, 0, 0, 0.16);
 $white: #FFFF;
 $black: #000000;
 $name-color: rgba(0, 0, 0, 0.5);
+$orange-color: #eb5f21;
+$blue-color: #27B5C8;
 
+.orangeCircle {
+  color: $orange-color;
+}
+.blueCircle {
+  color: $blue-color;
+}
 
 .comment {
   display: grid;
@@ -15,6 +23,7 @@ $name-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 462px;
   padding: 12px;
+  color: $black;
 
   &__left {
     color: $number-color;
@@ -34,8 +43,18 @@ $name-color: rgba(0, 0, 0, 0.5);
     line-height: 16px;
   }
 
-  &__centerStatus {
+  &__centerStatusSelect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    margin-top: 8px;
+  }
+
+  &__centerStatusSelectText {
+    display: flex;
+    align-items: center;
+    gap: 13px;
   }
 
   &__centerBottom {
