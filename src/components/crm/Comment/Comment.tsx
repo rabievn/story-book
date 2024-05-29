@@ -37,6 +37,7 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  }
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
+    const [isStatusValueOpen, setIsStatusValueOpen] = useState(false)
 
     const handleCheckboxChange = () => {
         setIsChecked(prev => !prev);
@@ -54,7 +55,8 @@ const Comment: React.FC<CommentPropsType> = ({
                     </div>
                     {status &&
                         <div>
-                            <button className={`${style.comment__centerStatusSelect}`}>
+                            <button className={`${style.comment__centerStatusSelect}`}
+                                    onClick={(prev) => setIsStatusValueOpen(!isStatusValueOpen)}>
                                 <div className={`${style.comment__centerStatusSelectText}`}>
                                     <CircleIcon status={status.changeStatus}/>
                                     <div
@@ -66,23 +68,26 @@ const Comment: React.FC<CommentPropsType> = ({
                                     A
                                 </div>
                             </button>
-                            <div
+                            {isStatusValueOpen && <div
                                 className={`${style.comment__centerStatusSelectField}`}>
                                 <div className={`${style.comment__pastValue}`}>
                                     <div
-                                        className={`${style.comment__pastValueSubtitle} ${status.changeStatus === "changed" ? style.orangeCircleLight : style.blueCircleLight}`}>Прошлое
-                                        значение:
+                                        className={`${style.comment__pastValueSubtitle} ${status.changeStatus === "changed" ? style.orangeCircleLight : style.blueCircleLight}`}>
+                                        Прошлое значение:
                                     </div>
                                     {Object.values(status.pastValue).map((value, index) => (
                                         <div key={index} className={`${style.comment__pastValueObject}`}>
                                             {value}
                                         </div>
                                     ))}
+                                    <div className={`${style.comment__pastValueArrow}`}>
+                                        1
+                                    </div>
                                 </div>
                                 <div className={`${style.comment__newValue}`}>
                                     <div
-                                        className={`${style.comment__newValueSubtitle} ${status.changeStatus === "changed" ? style.orangeCircleLight : style.blueCircleLight}`}> Новое
-                                        значение:
+                                        className={`${style.comment__newValueSubtitle} ${status.changeStatus === "changed" ? style.orangeCircleLight : style.blueCircleLight}`}>
+                                        Новое значение:
                                     </div>
                                     {Object.values(status.newValue).map((value, index) => (
                                         <div key={index} className={`${style.comment__newValueObject}`}>
@@ -91,18 +96,18 @@ const Comment: React.FC<CommentPropsType> = ({
                                     ))}
                                 </div>
                             </div>
+                            }
                         </div>
                     }
                 </div>
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
-                        <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="Image"/>
+                        <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="User image"/>
                         {name}
                     </div>
                     <div className={`${style.comment__centerBottomDate}`}>
                         <div>{date}</div>
-                        <div>1</div>
-                        {/*<img src={} alt="Pencil icon"/>*/}
+                        <div>1 {/*<img src={} alt="Pencil icon"/>*/}</div>
                     </div>
                 </div>
             </div>
