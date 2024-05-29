@@ -9,8 +9,19 @@ $blue-color: #27B5C8;
 .orangeCircle {
   color: $orange-color;
 }
+
 .blueCircle {
   color: $blue-color;
+}
+
+.orangeCircleLight {
+  color: $orange-color;
+  opacity: 0.5;
+}
+
+.blueCircleLight {
+  color: $blue-color;
+  opacity: 0.5;
 }
 
 .comment {
@@ -77,6 +88,37 @@ $blue-color: #27B5C8;
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  &__centerBottomDate {
+    display: flex;
+    gap: 7px;
+  }
+
+  &__centerStatusSelectField {
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    width: 100%;
+    margin-top: 11px;
+  }
+
+  &__pastValue {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__newValue {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__pastValueSubtitle {
+
+  }
+
+  &__newValueSubtitle {
   }
 
   &__right {

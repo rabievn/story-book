@@ -66,8 +66,30 @@ const Comment: React.FC<CommentPropsType> = ({
                                     A
                                 </div>
                             </button>
-                            <div className={``}>
-                                123
+                            <div
+                                className={`${style.comment__centerStatusSelectField}`}>
+                                <div className={`${style.comment__pastValue}`}>
+                                    <div
+                                        className={`${style.comment__pastValueSubtitle} ${status.changeStatus === "changed" ? style.orangeCircleLight : style.blueCircleLight}`}>Прошлое
+                                        значение:
+                                    </div>
+                                    {Object.values(status.pastValue).map((value, index) => (
+                                        <div key={index} className={`${style.comment__pastValueObject}`}>
+                                            {value}
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className={`${style.comment__newValue}`}>
+                                    <div
+                                        className={`${style.comment__newValueSubtitle} ${status.changeStatus === "changed" ? style.orangeCircleLight : style.blueCircleLight}`}> Новое
+                                        значение:
+                                    </div>
+                                    {Object.values(status.newValue).map((value, index) => (
+                                        <div key={index} className={`${style.comment__newValueObject}`}>
+                                            {value}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     }
@@ -78,7 +100,8 @@ const Comment: React.FC<CommentPropsType> = ({
                         {name}
                     </div>
                     <div className={`${style.comment__centerBottomDate}`}>
-                        {date}
+                        <div>{date}</div>
+                        <div>1</div>
                         {/*<img src={} alt="Pencil icon"/>*/}
                     </div>
                 </div>
