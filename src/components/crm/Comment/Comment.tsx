@@ -64,7 +64,8 @@ const Comment: React.FC<CommentPropsType> = ({
                                         {status.title}
                                     </div>
                                 </div>
-                                <div className={`${style.comment__centerStatusSelectArrow}`}>
+                                <div
+                                    className={`${style.comment__centerStatusSelectArrow} ${isStatusValueOpen ? style.comment__centerStatusSelectArrowInactive : style.comment__centerStatusSelectArrowActive}`}>
                                     A
                                 </div>
                             </button>

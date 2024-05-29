@@ -95,11 +95,38 @@ $blue-color: #27B5C8;
     gap: 7px;
   }
 
-  &__centerStatusSelectField {
+  .comment__centerStatusSelectField {
     display: grid;
-    grid-template-columns: 1fr  1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     margin-top: 11px;
+    height: auto; /* Используем auto для динамической высоты */
+    animation: fadeIn 0.3s ease-out;
+    opacity: 1;
+    transform-origin: top; /* Определяем начальную точку анимации */
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+      grid-template-columns: 1fr 1fr;
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__centerStatusSelectArrowActive {
+    rotate: 180deg;
+    transition: rotate 0.3s ease;
+  }
+
+  &__centerStatusSelectArrowInactive {
+    rotate: 0;
+    transition: rotate 0.3s ease;
   }
 
   &__pastValue {
