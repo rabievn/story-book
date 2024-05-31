@@ -22,7 +22,8 @@ type CommentPropsType = {
         title: string
         pastValue: object
         newValue: object
-    }
+    } | null
+    isMine: boolean
 };
 
 const Comment: React.FC<CommentPropsType> = ({
@@ -42,7 +43,8 @@ const Comment: React.FC<CommentPropsType> = ({
                                                      newValue: {name: "Рустам", dateOfBirth: "18.08.1992"},
                                                  },
                                                  checkboxColor = "light-blue",
-                                                 checkboxSize = "small"
+                                                 checkboxSize = "small",
+                                                 isMine = true
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
     const [isStatusValueOpen, setIsStatusValueOpen] = useState(false)
@@ -132,14 +134,14 @@ const Comment: React.FC<CommentPropsType> = ({
                         onChange={handleCheckboxChange}
                     />
                 </div>
-                <div className={`${style.comment__rightIcons}`}>
+                {isMine && <div className={`${style.comment__rightIcons}`}>
                     <button>
                         <img src={garbage} alt="Garbage icon"/>
                     </button>
                     <button>
                         <img src={edit} alt="Edit icon"/>
                     </button>
-                </div>
+                </div>}
             </div>
         </div>
     );
