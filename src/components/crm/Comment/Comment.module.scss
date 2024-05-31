@@ -1,28 +1,11 @@
 $border-gray: #BEBEBE;
+$dark-mode-border-gray: #454545;
 $number-color: rgba(0, 0, 0, 0.16);
 $white: #FFFF;
 $black: #000000;
 $name-color: rgba(0, 0, 0, 0.5);
-$orange-color: #eb5f21;
-$blue-color: #27B5C8;
-
-.orangeCircle {
-  color: $orange-color;
-}
-
-.blueCircle {
-  color: $blue-color;
-}
-
-.orangeCircleLight {
-  color: $orange-color;
-  opacity: 0.5;
-}
-
-.blueCircleLight {
-  color: $blue-color;
-  opacity: 0.5;
-}
+$dark-mode-black: #121212;
+$dark-mode-gray: #707070;
 
 .comment {
   display: grid;
@@ -34,7 +17,6 @@ $blue-color: #27B5C8;
   width: 100%;
   max-width: 462px;
   padding: 12px;
-  color: $black;
 
   &__left {
     color: $number-color;
@@ -43,68 +25,122 @@ $blue-color: #27B5C8;
 
   &__center {
     margin-top: 24px;
+    padding-right: 10px;
+
+    &Main {
+      padding-bottom: 12px;
+      border-bottom: 1px solid $border-gray;
+    }
+
+    &Text {
+      line-height: 16px;
+    }
+
+    &StatusSelect {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 8px;
+
+      &Text {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+      }
+
+      &Field {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        margin-top: 11px;
+        height: auto;
+        animation: fadeIn 0.3s ease-out;
+        opacity: 1;
+        transform-origin: top;
+      }
+    }
+
+    &Bottom {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 12px;
+
+      &User {
+        display: flex;
+        gap: 10px;
+        color: $name-color;
+        align-items: center;
+
+        &Image {
+          width: 32px;
+          height: 32px;
+          border-radius: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      &Date {
+        display: flex;
+        gap: 10px;
+      }
+    }
   }
 
-  &__centerMain {
-    padding-bottom: 12px;
-    border-bottom: 1px solid $border-gray;
-  }
-
-  &__centerText {
-    line-height: 16px;
-  }
-
-  &__centerStatusSelect {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 8px;
-  }
-
-  &__centerStatusSelectText {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-  }
-
-  &__centerBottom {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-top: 12px;
-  }
-
-  &__centerBottomUser {
-    display: flex;
-    gap: 10px;
-    color: $name-color;
-    align-items: center;
-  }
-
-  &__centerBottomUserImage {
-    width: 32px;
-    height: 32px;
-    border-radius: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  &__centerBottomDate {
-    display: flex;
-    gap: 10px;
-  }
-
-  .comment__centerStatusSelectField {
-    display: grid;
+  &__pastValue {
     position: relative;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    margin-top: 11px;
-    height: auto; /* Используем auto для динамической высоты */
-    animation: fadeIn 0.3s ease-out;
-    opacity: 1;
-    transform-origin: top; /* Определяем начальную точку анимации */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &Arrow {
+      position: absolute;
+      rotate: 90deg;
+      right: 46%;
+      top: 50%;
+      translate: -50%;
+    }
+
+    &Subtitle {
+    }
+  }
+
+  &__newValue {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 20px;
+
+    &Subtitle {
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+
+    &Icons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      height: 100%;
+    }
+  }
+
+  &__centerStatusSelectArrowActive {
+    rotate: 180deg;
+    transition: rotate 0.3s ease;
+  }
+
+  &__centerStatusSelectArrowInactive {
+    rotate: 0;
+    transition: rotate 0.3s ease;
   }
 
   @keyframes fadeIn {
@@ -119,58 +155,17 @@ $blue-color: #27B5C8;
       grid-template-columns: 1fr 1fr;
     }
   }
+}
+.commentDark {
+  background: $dark-mode-black;
+  color: $white;
+  border: 1px solid $dark-mode-border-gray;
 
-  &__centerStatusSelectArrowActive {
-    rotate: 180deg;
-    transition: rotate 0.3s ease;
+  .comment__left {
+    color: $dark-mode-border-gray;
   }
 
-  &__centerStatusSelectArrowInactive {
-    rotate: 0;
-    transition: rotate 0.3s ease;
-  }
-
-  &__pastValue {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  &__pastValueArrow {
-    position: absolute;
-    rotate: 90deg;
-    right: 46%;
-    top: 50%;
-    translate: -50%;
-  }
-
-  &__newValue {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-left: 20px;
-  }
-
-  &__pastValueSubtitle {
-
-  }
-
-  &__newValueSubtitle {
-  }
-
-  &__right {
-    display: flex;
-    flex-direction: column;
-    margin-inline: auto;
-  }
-
-  &__rightIcons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    height: 100%;
+  .comment__centerBottomUser {
+    color: $dark-mode-gray;
   }
 }

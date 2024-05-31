@@ -1,0 +1,196 @@
+:root {
+  color-scheme: light dark;
+}
+
+//цвета
+$border-gray: #BEBEBE;
+$number-color: rgba(0, 0, 0, 0.16);
+$white: #FFFF;
+$black: #000000;
+$name-color: rgba(0, 0, 0, 0.5);
+$orange-color: #eb5f21;
+$blue-color: #27B5C8;
+
+// Определение переменных для цветовой схемы по умолчанию (светлой)
+$comment-background-default: $white;
+$comment-color-default: $black;
+
+// Определение переменных для цветовой схемы темной темы
+$comment-background-dark: $black;
+$comment-color-dark: $white;
+
+.orangeCircle {
+  color: $orange-color;
+}
+
+.blueCircle {
+  color: $blue-color;
+}
+
+.orangeCircleLight {
+  color: $orange-color;
+  opacity: 0.5;
+}
+
+.blueCircleLight {
+  color: $blue-color;
+  opacity: 0.5;
+}
+
+.comment {
+  display: grid;
+  grid-template-columns: 41px 1fr 31px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid $border-gray;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 462px;
+  padding: 12px;
+  color: $comment-color-default;
+  background-color: $comment-background-default;
+
+  @media (prefers-color-scheme: dark) {
+    color: $comment-color-dark;
+    background-color: $comment-background-dark;
+    border: 1px solid $border-gray;
+  }
+
+  &__left {
+    color: $number-color;
+    font-size: 20px;
+  }
+
+  &__center {
+    margin-top: 24px;
+  }
+
+  &__centerMain {
+    padding-bottom: 12px;
+    border-bottom: 1px solid $border-gray;
+  }
+
+  &__centerText {
+    line-height: 16px;
+  }
+
+  &__centerStatusSelect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  &__centerStatusSelectText {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  &__centerBottom {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 12px;
+  }
+
+  &__centerBottomUser {
+    display: flex;
+    gap: 10px;
+    color: $name-color;
+    align-items: center;
+  }
+
+  &__centerBottomUserImage {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__centerBottomDate {
+    display: flex;
+    gap: 10px;
+  }
+
+  .comment__centerStatusSelectField {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-top: 11px;
+    height: auto; /* Используем auto для динамической высоты */
+    animation: fadeIn 0.3s ease-out;
+    opacity: 1;
+    transform-origin: top; /* Определяем начальную точку анимации */
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+      grid-template-columns: 1fr 1fr;
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__centerStatusSelectArrowActive {
+    rotate: 180deg;
+    transition: rotate 0.3s ease;
+  }
+
+  &__centerStatusSelectArrowInactive {
+    rotate: 0;
+    transition: rotate 0.3s ease;
+  }
+
+  &__pastValue {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__pastValueArrow {
+    position: absolute;
+    rotate: 90deg;
+    right: 46%;
+    top: 50%;
+    translate: -50%;
+  }
+
+  &__newValue {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 20px;
+  }
+
+  &__pastValueSubtitle {
+
+  }
+
+  &__newValueSubtitle {
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+  }
+
+  &__rightIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    height: 100%;
+  }
+}

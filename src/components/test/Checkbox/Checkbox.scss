@@ -19,34 +19,39 @@
     --checkbox-bg-checked: var(--gray);
 }
 
-
 @media (prefers-color-scheme: dark) {
     :root {
         --checkbox-bg: var(--dark-gray);
         --checkbox-border: var(--dark-gray);
         --checkbox-bg-checked: var(--dark-blue);
+        --green: #114A33;
+        --blue: #006981;
+        --violet: #4C28D1;
+        --pink: #DB4C8C;
+        --light-pink: #E37FA5;
+        --light-blue: #26C2EF;
     }
-}
 
-
-@media (prefers-color-scheme: dark) {
     .checkbox.green {
-        --checkbox-bg-checked: var(--dark-green);
+        --checkbox-border: var(--green);
+        --checkbox-bg-checked: var(--green);
     }
 
     .checkbox.blue {
+        --checkbox-border: var(--dark-blue);
         --checkbox-bg-checked: var(--dark-blue);
     }
 
     .checkbox.violet {
+        --checkbox-border: var(--dark-violet);
         --checkbox-bg-checked: var(--dark-violet);
     }
 
     .checkbox.gray {
+        --checkbox-border: var(--dark-gray);
         --checkbox-bg-checked: var(--dark-gray);
     }
 }
-
 
 .checkbox {
     -webkit-appearance: none;
