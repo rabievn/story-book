@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import style from './Comment.module.scss';
-import Checkbox from '../Checkbox/Checkbox';
+import Checkbox, {CheckboxColor, CheckboxSize} from '../Checkbox/Checkbox';
 import CircleIcon from "./icons/CircleIcon";
+import arrow from "./icons/arrow.svg";
+import calendar from "./icons/calendar.svg";
+import edit from "./icons/edit.svg";
+import garbage from "./icons/garbage.svg";
 
 type CommentPropsType = {
     numeric: number
@@ -10,6 +14,8 @@ type CommentPropsType = {
     name: string
     defaultChecked: boolean
     date: string
+    checkboxColor: CheckboxColor
+    checkboxSize: CheckboxSize
     status: {
         changeStatus: string
         isExist: boolean
@@ -34,7 +40,9 @@ const Comment: React.FC<CommentPropsType> = ({
                                                          dateOfBirth: "Поле «Дата рождения» 18.08.1990"
                                                      },
                                                      newValue: {name: "Рустам", dateOfBirth: "18.08.1992"},
-                                                 }
+                                                 },
+                                                 checkboxColor = "light-blue",
+                                                 checkboxSize = "small"
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
     const [isStatusValueOpen, setIsStatusValueOpen] = useState(false)
@@ -66,7 +74,7 @@ const Comment: React.FC<CommentPropsType> = ({
                                 </div>
                                 <div
                                     className={`${style.comment__centerStatusSelectArrow} ${isStatusValueOpen ? style.comment__centerStatusSelectArrowInactive : style.comment__centerStatusSelectArrowActive}`}>
-                                    A
+                                    <div><img src={arrow} alt="Arrow icon"/></div>
                                 </div>
                             </button>
                             {isStatusValueOpen && <div
@@ -81,9 +89,9 @@ const Comment: React.FC<CommentPropsType> = ({
                                             {value}
                                         </div>
                                     ))}
-                                    <div className={`${style.comment__pastValueArrow}`}>
-                                        1
-                                    </div>
+                                </div>
+                                <div className={`${style.comment__pastValueArrow}`}>
+                                    <img src={arrow} alt="Arrow icon"/>
                                 </div>
                                 <div className={`${style.comment__newValue}`}>
                                     <div
@@ -108,15 +116,17 @@ const Comment: React.FC<CommentPropsType> = ({
                     </div>
                     <div className={`${style.comment__centerBottomDate}`}>
                         <div>{date}</div>
-                        <div>1 {/*<img src={} alt="Pencil icon"/>*/}</div>
+                        <div>
+                            <img src={calendar} alt="Calendar icon"/>
+                        </div>
                     </div>
                 </div>
             </div>
             <div className={`${style.comment__right}`}>
                 <div>
                     <Checkbox
-                        size="small"
-                        color="light-blue"
+                        size={checkboxSize}
+                        color={checkboxColor}
                         active={false}
                         checked={isChecked}
                         onChange={handleCheckboxChange}
@@ -124,12 +134,10 @@ const Comment: React.FC<CommentPropsType> = ({
                 </div>
                 <div className={`${style.comment__rightIcons}`}>
                     <button>
-                        {/*<img src={} alt="Garbage icon"/>*/}
-                        1
+                        <img src={garbage} alt="Garbage icon"/>
                     </button>
                     <button>
-                        {/*<img src={} alt="Pencil icon"/>*/}
-                        2
+                        <img src={edit} alt="Edit icon"/>
                     </button>
                 </div>
             </div>
