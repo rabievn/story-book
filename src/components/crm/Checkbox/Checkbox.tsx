@@ -1,5 +1,5 @@
 import React from 'react';
-import './Checkbox.css';
+import './Checkbox.scss';
 
 export type CheckboxSize = 'small' | 'medium' | 'large';
 export type CheckboxColor = 'blue' | 'gray' | 'green' | 'violet' | 'light-blue' | 'pink' | 'light-pink';

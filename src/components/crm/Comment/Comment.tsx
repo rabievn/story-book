@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from './Comment.module.scss';
-import Checkbox, {CheckboxColor, CheckboxSize} from '../Checkbox/Checkbox';
+import Checkbox, {CheckboxColor} from '../Checkbox/Checkbox';
 import CircleIcon from "./icons/CircleIcon";
 import arrow from "./icons/arrow.svg";
 import calendar from "./icons/calendar.svg";
@@ -15,7 +15,6 @@ type CommentPropsType = {
     defaultChecked: boolean
     date: string
     checkboxColor: CheckboxColor
-    checkboxSize: CheckboxSize
     status: {
         changeStatus: string
         isExist: boolean
@@ -43,7 +42,6 @@ const Comment: React.FC<CommentPropsType> = ({
                                                      newValue: {name: "Рустам", dateOfBirth: "18.08.1992"},
                                                  },
                                                  checkboxColor = "light-blue",
-                                                 checkboxSize = "small",
                                                  isMine = true
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
@@ -127,7 +125,7 @@ const Comment: React.FC<CommentPropsType> = ({
             <div className={`${style.comment__right}`}>
                 <div>
                     <Checkbox
-                        size={checkboxSize}
+                        size="small"
                         color={checkboxColor}
                         active={false}
                         checked={isChecked}
