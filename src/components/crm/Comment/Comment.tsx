@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import style from './Comment.module.scss';
 import Checkbox, {CheckboxColor} from '../Checkbox/Checkbox';
 import calendar from "./icons/calendar.svg";
-import edit from "./icons/edit.svg";
-import garbage from "./icons/garbage.svg";
 import GarbageIcon from "./icons/GarbageIcon";
 import EditIcon from "./icons/EditIcon";
 
@@ -17,6 +15,8 @@ type CommentPropsType = {
     checkboxColor: CheckboxColor
     isMine: boolean
     isDark: boolean
+    onDelete: () => void
+    onEdit: () => void
 };
 
 const Comment: React.FC<CommentPropsType> = ({
@@ -28,7 +28,9 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  date = "16.11.2024",
                                                  checkboxColor = "light-blue",
                                                  isMine = true,
-                                                 isDark = true
+                                                 isDark = true,
+                                                 onDelete,
+                                                 onEdit
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
 
@@ -68,13 +70,14 @@ const Comment: React.FC<CommentPropsType> = ({
                         active={false}
                         checked={isChecked}
                         onChange={handleCheckboxChange}
+                        isDark={isDark}
                     />
                 </div>
                 {isMine && <div className={`${style.comment__rightIcons}`}>
-                    <button>
+                    <button onClick={onDelete}>
                         <GarbageIcon color={isDark ? "#FFFFFF" : "#000000"}/>
                     </button>
-                    <button>
+                    <button onClick={onEdit}>
                         <EditIcon color={isDark ? "#FFFFFF" : "#000000"}/>
                     </button>
                 </div>}
