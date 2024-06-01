@@ -7,6 +7,8 @@ import "./Comment.scss";
 import {Checkbox} from "@progress/kendo-react-inputs";
 import '@progress/kendo-theme-default/dist/all.css';
 
+type CheckboxColorType = "blue" | "pink"
+
 type CommentPropsType = {
     numeric: number
     text: string
@@ -18,6 +20,7 @@ type CommentPropsType = {
     isDark: boolean
     onDelete: () => void
     onEdit: () => void
+    checkboxColor: CheckboxColorType
 };
 
 const Comment: React.FC<CommentPropsType> = ({
@@ -30,7 +33,8 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  isMine = true,
                                                  isDark = true,
                                                  onDelete,
-                                                 onEdit
+                                                 onEdit,
+                                                 checkboxColor = "pink"
                                              }) => {
     return (
         <div className={`${style.comment} ${isDark && style.commentDark}`}>
@@ -58,7 +62,8 @@ const Comment: React.FC<CommentPropsType> = ({
             </div>
             <div className={`${style.comment__right}`}>
                 <div>
-                    <Checkbox className="comment__checkbox" size={"large"} rounded={"large"}/>
+                    <Checkbox className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`} size={"large"}
+                              rounded={"large"}/>
                 </div>
                 {isMine && <div className={`${style.comment__rightIcons}`}>
                     <button onClick={onDelete}>
