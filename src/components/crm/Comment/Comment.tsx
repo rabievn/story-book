@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './Comment.module.scss';
-import Checkbox, {CheckboxColor} from '../Checkbox/Checkbox';
 import calendar from "./icons/calendar.svg";
 import GarbageIcon from "./icons/GarbageIcon";
 import EditIcon from "./icons/EditIcon";
+import "./Comment.scss";
+import {Checkbox} from "@progress/kendo-react-inputs";
+import '@progress/kendo-theme-default/dist/all.css';
 
 type CommentPropsType = {
     numeric: number
@@ -12,7 +14,6 @@ type CommentPropsType = {
     name: string
     defaultChecked: boolean
     date: string
-    checkboxColor: CheckboxColor
     isMine: boolean
     isDark: boolean
     onDelete: () => void
@@ -26,18 +27,11 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  name = "Андреев В. И.",
                                                  defaultChecked = false,
                                                  date = "16.11.2024",
-                                                 checkboxColor = "light-blue",
                                                  isMine = true,
                                                  isDark = true,
                                                  onDelete,
                                                  onEdit
                                              }) => {
-    const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
-
-    const handleCheckboxChange = () => {
-        setIsChecked(prev => !prev);
-    };
-
     return (
         <div className={`${style.comment} ${isDark && style.commentDark}`}>
             <div className={`${style.comment__left}`}>
@@ -64,14 +58,7 @@ const Comment: React.FC<CommentPropsType> = ({
             </div>
             <div className={`${style.comment__right}`}>
                 <div>
-                    <Checkbox
-                        size="small"
-                        color={checkboxColor}
-                        active={false}
-                        checked={isChecked}
-                        onChange={handleCheckboxChange}
-                        isDark={isDark}
-                    />
+                    <Checkbox className="comment__checkbox" size={"large"} rounded={"large"}/>
                 </div>
                 {isMine && <div className={`${style.comment__rightIcons}`}>
                     <button onClick={onDelete}>

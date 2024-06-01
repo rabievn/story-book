@@ -36,32 +36,6 @@ $dark-mode-gray: #707070;
       line-height: 16px;
     }
 
-    &StatusSelect {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin-top: 8px;
-
-      &Text {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-      }
-
-      &Field {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        margin-top: 11px;
-        height: auto;
-        animation: fadeIn 0.3s ease-out;
-        opacity: 1;
-        transform-origin: top;
-      }
-    }
-
     &Bottom {
       display: flex;
       align-items: center;
@@ -90,38 +64,11 @@ $dark-mode-gray: #707070;
     }
   }
 
-  &__pastValue {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    &Arrow {
-      position: absolute;
-      rotate: 90deg;
-      right: 46%;
-      top: 50%;
-      translate: -50%;
-    }
-
-    &Subtitle {
-    }
-  }
-
-  &__newValue {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-left: 20px;
-
-    &Subtitle {
-    }
-  }
-
   &__right {
     display: flex;
     flex-direction: column;
     margin-inline: auto;
+    align-items: center;
 
     &Icons {
       display: flex;
@@ -132,30 +79,8 @@ $dark-mode-gray: #707070;
       height: 100%;
     }
   }
-
-  &__centerStatusSelectArrowActive {
-    rotate: 180deg;
-    transition: rotate 0.3s ease;
-  }
-
-  &__centerStatusSelectArrowInactive {
-    rotate: 0;
-    transition: rotate 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: scaleY(0);
-      grid-template-columns: 1fr 1fr;
-    }
-    100% {
-      opacity: 1;
-      transform: scaleY(1);
-      grid-template-columns: 1fr 1fr;
-    }
-  }
 }
+
 .commentDark {
   background: $dark-mode-black;
   color: $white;

@@ -1,0 +1,21 @@
+$border-light-blue: #B2DCFF;
+.comment__checkbox .k-checkbox {
+  border-color: $border-light-blue;
+}
+
+.comment__checkbox .k-checkbox:checked {
+  background-color: $border-light-blue;
+  border-color: $border-light-blue;
+}
+
+.comment__checkbox .k-checkbox {
+  border-color: $border-light-blue;
+}
+
+.k-checkbox:focus, .k-checkbox.k-focus {
+  box-shadow: 0 0 0 2px color-mix(in srg b, var($border-light-blue, $border-light-blue) 30%, transparent);
+}
+
+.k-checkbox-wrap .comment__checkbox > input{
+  box-shadow: 0 0 0 2px color-mix(in srg b, var($border-light-blue, $border-light-blue) 30%, transparent);
+}
