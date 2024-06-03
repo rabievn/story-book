@@ -18,23 +18,27 @@ $black: #121212;
 
 
 .comment__checkboxDark.blue .k-checkbox {
-
   border: 1.4px solid $border-dark-blue;
 }
-.comment__checkboxDark.pink .k-checkbox {
-  border: 1.4px solid $border-dark-pink;
-}
-.comment__checkboxDark.pink .k-checkbox:checked {
-  background-color: $border-dark-pink;
-  border-color: $border-dark-pink;
-}
+
+
 .comment__checkbox.blue .k-checkbox:checked {
   background-color: $border-light-blue;
   border-color: $border-light-blue;
 }
+
 .comment__checkbox.pink .k-checkbox:checked {
   background-color: $border-light-pink;
   border-color: $border-light-pink;
+}
+
+.comment__checkboxDark.pink .k-checkbox {
+  border: 1.4px solid $border-dark-pink;
+}
+
+.comment__checkboxDark.pink .k-checkbox:checked {
+  background-color: $border-dark-pink;
+  border-color: $border-dark-pink;
 }
 
 .comment__checkboxDark.blue .k-checkbox:checked {
@@ -75,6 +79,7 @@ $black: #121212;
     }
   }
 }
+
 
 .k-checkbox-wrap.comment__checkboxDark {
   .k-checkbox {

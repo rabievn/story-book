@@ -6,6 +6,9 @@ import EditIcon from "./icons/EditIcon";
 import "./Comment.scss";
 import {Checkbox} from "@progress/kendo-react-inputs";
 import '@progress/kendo-theme-default/dist/all.css';
+import {Avatar} from "@progress/kendo-react-layout";
+import {userIcon} from "@progress/kendo-svg-icons";
+import {SvgIcon} from "@progress/kendo-react-common";
 
 type CheckboxColorType = "blue" | "pink"
 
@@ -49,7 +52,9 @@ const Comment: React.FC<CommentPropsType> = ({
                 </div>
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
-                        <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="User image"/>
+                        <Avatar rounded="full" type="icon" themeColor={"dark"}>
+                            <SvgIcon icon={userIcon}/>
+                        </Avatar>
                         {name}
                     </div>
                     <div className={`${style.comment__centerBottomDate}`}>
@@ -62,7 +67,8 @@ const Comment: React.FC<CommentPropsType> = ({
             </div>
             <div className={`${style.comment__right}`}>
                 <div>
-                    <Checkbox className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`} size={"large"}
+                    <Checkbox className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`}
+                              size={"large"}
                               rounded={"large"}/>
                 </div>
                 {isMine && <div className={`${style.comment__rightIcons}`}>
