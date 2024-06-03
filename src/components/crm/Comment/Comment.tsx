@@ -10,7 +10,8 @@ import {Avatar} from "@progress/kendo-react-layout";
 import {userIcon} from "@progress/kendo-svg-icons";
 import {SvgIcon} from "@progress/kendo-react-common";
 
-type CheckboxColorType = "blue" | "pink"
+export type CheckboxSizeType = 'small' | 'medium' | 'large';
+export type CheckboxColorType = 'blue' | 'gray' | 'green' | 'violet' | 'light-blue' | 'pink';
 
 type CommentPropsType = {
     numeric: number
@@ -24,6 +25,7 @@ type CommentPropsType = {
     onDelete: () => void
     onEdit: () => void
     checkboxColor: CheckboxColorType
+    checkboxSize: CheckboxSizeType
 };
 
 const Comment: React.FC<CommentPropsType> = ({
@@ -37,7 +39,8 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  isDark = true,
                                                  onDelete,
                                                  onEdit,
-                                                 checkboxColor = "pink"
+                                                 checkboxColor = "pink",
+                                                 checkboxSize = "small"
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
 
@@ -68,7 +71,6 @@ const Comment: React.FC<CommentPropsType> = ({
                                 :
                                 <SvgIcon icon={userIcon}/>
                             }
-
                         </Avatar>
                         {name}
                     </div>
@@ -85,7 +87,7 @@ const Comment: React.FC<CommentPropsType> = ({
                     <Checkbox checked={isChecked}
                               onChange={handleCheckboxChange}
                               className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`}
-                              size={"large"}
+                              size={checkboxSize}
                               rounded={"large"}/>
                 </div>
                 {isMine && <div className={`${style.comment__rightIcons}`}>
