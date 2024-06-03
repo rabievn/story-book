@@ -9,6 +9,7 @@ import '@progress/kendo-theme-default/dist/all.css';
 import {Avatar} from "@progress/kendo-react-layout";
 import {userIcon} from "@progress/kendo-svg-icons";
 import {SvgIcon} from "@progress/kendo-react-common";
+import comment from "../../test/Comment/Comment";
 
 export type CheckboxSizeType = 'small' | 'medium' | 'large';
 export type CheckboxColorType = 'blue' | 'gray' | 'green' | 'violet' | 'light-blue' | 'pink';
@@ -29,7 +30,9 @@ type CommentPropsType = {
     numeric: number
     text: string
     imgSrc: string
-    name: string
+    user: {
+        name: string
+    }
     defaultChecked: boolean
     date: string
     isMine: boolean
@@ -45,7 +48,7 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  numeric = 1,
                                                  text = "Текст комментария, текст комментария, текст комментария, текст комментария, текст комментария,\nтекст комментария,",
                                                  imgSrc,
-                                                 name = "Андреев В. И.",
+                                                 user = {name: "Андреев В. И."},
                                                  defaultChecked = false,
                                                  date = "16.11.2024",
                                                  isMine = true,
@@ -65,7 +68,6 @@ const Comment: React.FC<CommentPropsType> = ({
     const handleCheckboxChange = () => {
         setIsChecked(prev => !prev);
     };
-
     return (
         <div className={`${style.comment} ${isDark && style.commentDark}`}>
             <div className={`${style.comment__left}`}>
@@ -79,14 +81,14 @@ const Comment: React.FC<CommentPropsType> = ({
                 </div>
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
-                        <Avatar rounded="full" type="icon" themeColor={avatarTheme}>
+                        <Avatar rounded="full" type="text" themeColor={avatarTheme}>
                             {imgSrc ?
                                 <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="User image"/>
                                 :
-                                <SvgIcon icon={userIcon}/>
+                                user.name[0]
                             }
                         </Avatar>
-                        {name}
+                        {user.name}
                     </div>
                     <div className={`${style.comment__centerBottomDate}`}>
                         <div>{date}</div>
