@@ -13,9 +13,6 @@ const EditIcon: React.FC<IconProps> = ({color = '#000000'}) => {
                 transform="translate(-3.5 -3.248)"
                 fill="none"
                 stroke={color}
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1"
             />
         </svg>
     );
