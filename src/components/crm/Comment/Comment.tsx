@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './Comment.module.scss';
 import calendar from "./icons/calendar.svg";
 import GarbageIcon from "./icons/GarbageIcon";
@@ -39,6 +39,16 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  onEdit,
                                                  checkboxColor = "pink"
                                              }) => {
+    const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
+
+    useEffect(() => {
+        setIsChecked(defaultChecked);
+    }, [defaultChecked]);
+
+    const handleCheckboxChange = () => {
+        setIsChecked(prev => !prev);
+    };
+
     return (
         <div className={`${style.comment} ${isDark && style.commentDark}`}>
             <div className={`${style.comment__left}`}>
@@ -53,7 +63,12 @@ const Comment: React.FC<CommentPropsType> = ({
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
                         <Avatar rounded="full" type="icon" themeColor={"dark"}>
-                            <SvgIcon icon={userIcon}/>
+                            {imgSrc ?
+                                <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="User image"/>
+                                :
+                                <SvgIcon icon={userIcon}/>
+                            }
+
                         </Avatar>
                         {name}
                     </div>
@@ -67,7 +82,9 @@ const Comment: React.FC<CommentPropsType> = ({
             </div>
             <div className={`${style.comment__right}`}>
                 <div>
-                    <Checkbox className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`}
+                    <Checkbox checked={isChecked}
+                              onChange={handleCheckboxChange}
+                              className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`}
                               size={"large"}
                               rounded={"large"}/>
                 </div>
