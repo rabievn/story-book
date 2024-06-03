@@ -12,6 +12,18 @@ import {SvgIcon} from "@progress/kendo-react-common";
 
 export type CheckboxSizeType = 'small' | 'medium' | 'large';
 export type CheckboxColorType = 'blue' | 'gray' | 'green' | 'violet' | 'light-blue' | 'pink';
+export type AvatarType =
+    'dark'
+    | 'base'
+    | 'error'
+    | 'info'
+    | 'inverse'
+    | 'light'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'tertiary'
+    | 'warning';
 
 type CommentPropsType = {
     numeric: number
@@ -26,6 +38,7 @@ type CommentPropsType = {
     onEdit: () => void
     checkboxColor: CheckboxColorType
     checkboxSize: CheckboxSizeType
+    avatarTheme: AvatarType
 };
 
 const Comment: React.FC<CommentPropsType> = ({
@@ -40,7 +53,8 @@ const Comment: React.FC<CommentPropsType> = ({
                                                  onDelete,
                                                  onEdit,
                                                  checkboxColor = "pink",
-                                                 checkboxSize = "small"
+                                                 checkboxSize = "small",
+                                                 avatarTheme = "dark"
                                              }) => {
     const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
 
@@ -65,7 +79,7 @@ const Comment: React.FC<CommentPropsType> = ({
                 </div>
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
-                        <Avatar rounded="full" type="icon" themeColor={"dark"}>
+                        <Avatar rounded="full" type="icon" themeColor={avatarTheme}>
                             {imgSrc ?
                                 <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="User image"/>
                                 :
