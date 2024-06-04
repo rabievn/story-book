@@ -1,26 +1,41 @@
 $blue-border: #B2DCFF;
+$blue: #26BAF1;
 $white: #FFFFFF;
 $card-border-radius: 14px;
+$black: #000000;
+$gray: #707070;
+$font-md: 14px;
+$fw-regular: 500;
+$main-font-family: Roboto, Arial, sans-serif;
 
 .taskCard {
   display: grid;
-  grid-template-columns: 75px 1fr;
+  grid-template-columns: 65px 1fr;
+  font-size: $font-md;
+  font-weight: $fw-regular;
+  font-family: $main-font-family;
   width: 280px;
   border: 1px solid $blue-border;
   padding: 10px;
   background: $white;
   border-radius: $card-border-radius;
 
+
   &__left {
-    // стили для левой части
+    display: flex;
+    flex-direction: column;
   }
 
   &__index {
-    // стили для индекса
+    color: $gray;
+    font-size: 25px;
   }
 
   &__userPhoto {
-    // стили для фотографии пользователя
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: -37.5px;
   }
 
   &__main {
@@ -28,15 +43,27 @@ $card-border-radius: 14px;
   }
 
   &__header {
-    // стили для заголовка
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__status {
-    // стили для статуса
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 17px;
+    min-width: 86px;
+    padding-inline: 13px;
+    height: 26px;
+    background: red;
+    color: $white;
   }
 
   &__headerButtons {
-    // стили для кнопок в заголовке
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   &__moreOptions {
@@ -47,20 +74,25 @@ $card-border-radius: 14px;
     // стили для чекбокса выбора
   }
 
-  &__title {
-    // стили для заголовка
+  &__name {
+    margin-top: 12px;
+    color: $blue;
   }
 
   &__date {
-    // стили для даты
+    display: flex;
+    gap: 14px;
+    margin-top: 11px;
   }
 
   &__description {
-    // стили для описания
+    margin-top: 11px;
   }
 
   &__footer {
-    // стили для подвала
+    display: flex;
+    justify-content: space-between;
+    margin-top: 11px;
   }
 
   &__footerNumber {

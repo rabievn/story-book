@@ -5,10 +5,8 @@ import GarbageIcon from "./icons/GarbageIcon";
 import EditIcon from "./icons/EditIcon";
 import '@progress/kendo-theme-default/dist/all.css';
 import {Avatar} from "@progress/kendo-react-layout";
-import Checkbox from "../Checkbox/Checkbox";
+import Checkbox, {CheckboxColorType, CheckboxSizeType} from "../Checkbox/Checkbox";
 
-export type CheckboxSizeType = 'small' | 'medium' | 'large';
-export type CheckboxColorType = 'blue' | 'gray' | 'green' | 'violet' | 'light-blue' | 'pink';
 export type AvatarType =
     'dark'
     | 'base'

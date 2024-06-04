@@ -1,0 +1,16 @@
+<svg id="Calendar_SVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+     height="18" viewBox="0 0 18 18">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Path_8746" d="M0,0H18V18H0Z"/>
+        </clipPath>
+    </defs>
+    <path id="Background" d="M0,0H18V18H0Z" fill="rgba(255,255,255,0)" fill-rule="evenodd"/>
+    <g id="Group_16616" clip-path="url(#clip-path)">
+        <g id="group" opacity="0.8">
+            <path id="path"
+                  d="M14.624,1.2H18V18H0V1.2H3.376V0H4.5V1.2h9V0h1.123ZM3.376,2.4H1.125V4.8h15.75V2.4h-2.25V3.6H13.5V2.4h-9V3.6H3.379ZM1.125,16.8h15.75V6H1.125Zm2.25-6V9.6h1.2v1.2Zm0,2.4V12h1.2v1.2Zm0,2.4V14.4h1.2v1.2ZM6.752,8.4V7.2h1.2V8.4Zm0,2.4V9.6h1.2v1.2Zm0,2.4V12h1.2v1.2Zm0,2.4V14.4h1.2v1.2Zm3.373-7.2V7.2h1.2V8.4Zm0,2.4V9.6h1.2v1.2Zm0,2.4V12h1.2v1.2Zm0,2.4V14.4h1.2v1.2ZM13.5,8.4V7.2h1.2V8.4Zm0,2.4V9.6h1.2v1.2Zm0,2.4V12h1.2v1.2Z"
+                  fill="#454545" fill-rule="evenodd"/>
+        </g>
+    </g>
+</svg>
