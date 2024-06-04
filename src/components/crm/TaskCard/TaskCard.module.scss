@@ -1,0 +1,77 @@
+$blue-border: #B2DCFF;
+$white: #FFFFFF;
+$card-border-radius: 14px;
+
+.taskCard {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  width: 280px;
+  border: 1px solid $blue-border;
+  padding: 10px;
+  background: $white;
+  border-radius: $card-border-radius;
+
+  &__left {
+    // стили для левой части
+  }
+
+  &__index {
+    // стили для индекса
+  }
+
+  &__userPhoto {
+    // стили для фотографии пользователя
+  }
+
+  &__main {
+    // стили для главной части
+  }
+
+  &__header {
+    // стили для заголовка
+  }
+
+  &__status {
+    // стили для статуса
+  }
+
+  &__headerButtons {
+    // стили для кнопок в заголовке
+  }
+
+  &__moreOptions {
+    // стили для кнопки "еще"
+  }
+
+  &__selectCheckbox {
+    // стили для чекбокса выбора
+  }
+
+  &__title {
+    // стили для заголовка
+  }
+
+  &__date {
+    // стили для даты
+  }
+
+  &__description {
+    // стили для описания
+  }
+
+  &__footer {
+    // стили для подвала
+  }
+
+  &__footerNumber {
+    // стили для номера в подвале
+  }
+
+  &__footerCity {
+    // стили для города в подвале
+  }
+
+  &__footerNotification {
+    // стили для уведомления в подвале
+  }
+}

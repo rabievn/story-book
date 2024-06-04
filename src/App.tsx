@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Input from "./components/test/Input/Input";
-import Checkbox from "./components/crm/UI/Checkbox/Checkbox";
+import Checkbox from "./components/test/Checkbox/Checkbox/Checkbox";
 
 function App() {
     return (

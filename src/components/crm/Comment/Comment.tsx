@@ -3,13 +3,9 @@ import style from './Comment.module.scss';
 import calendar from "./icons/calendar.svg";
 import GarbageIcon from "./icons/GarbageIcon";
 import EditIcon from "./icons/EditIcon";
-import "./Comment.scss";
-import {Checkbox} from "@progress/kendo-react-inputs";
 import '@progress/kendo-theme-default/dist/all.css';
 import {Avatar} from "@progress/kendo-react-layout";
-import {userIcon} from "@progress/kendo-svg-icons";
-import {SvgIcon} from "@progress/kendo-react-common";
-import comment from "../../test/Comment/Comment";
+import Checkbox from "../Checkbox/Checkbox";
 
 export type CheckboxSizeType = 'small' | 'medium' | 'large';
 export type CheckboxColorType = 'blue' | 'gray' | 'green' | 'violet' | 'light-blue' | 'pink';
@@ -100,9 +96,11 @@ const Comment: React.FC<CommentPropsType> = ({
             </div>
             <div className={`${style.comment__right}`}>
                 <div>
-                    <Checkbox checked={isChecked}
+                    <Checkbox isChecked={isChecked}
                               onChange={handleCheckboxChange}
-                              className={`comment__checkbox ${isDark ? 'comment__checkboxDark' : ''} ${checkboxColor}`}
+                              checkboxColor={checkboxColor}
+                              isDark={isDark}
+                              className={""}
                               size={checkboxSize}
                               rounded={"large"}/>
                 </div>
