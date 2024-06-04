@@ -3,7 +3,7 @@ import {Meta, StoryFn} from '@storybook/react';
 import Checkbox from "./Checkbox";
 
 export default {
-    title: "Checkbox",
+    title: "CRM/UI/Checkbox",
     component: Checkbox,
 } as Meta<typeof Checkbox>;
 

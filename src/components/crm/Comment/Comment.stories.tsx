@@ -3,7 +3,7 @@ import {Meta, StoryFn} from '@storybook/react';
 import Comment from "./Comment";
 
 export default {
-    title: "Comment",
+    title: "CRM/Comment",
     component: Comment,
 } as Meta<typeof Comment>;
 

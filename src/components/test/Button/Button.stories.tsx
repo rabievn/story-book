@@ -8,7 +8,7 @@ export default {
     argTypes: {
         variant: {
             type: 'string',
-            description: 'Button ui chakra',
+            description: 'Button UI chakra',
             defaultValue: 'primary',
             options: ['primary', 'success', 'danger'],
             control: {
