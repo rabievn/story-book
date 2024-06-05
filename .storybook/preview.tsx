@@ -1,7 +1,6 @@
 import React from "react";
 import {Preview} from '@storybook/react';
 import Center from "../src/components/test/Center/Center";
-import {ChakraProvider, CSSReset, theme} from "@chakra-ui/react";
 import {withConsole} from '@storybook/addon-console';
 
 const preview: Preview = {
@@ -22,10 +21,7 @@ const preview: Preview = {
         (storyFn, context) => withConsole()(storyFn)(context),
         (Story: any) => (
             <Center>
-                <ChakraProvider theme={theme}>
-                    <CSSReset/>
-                    <Story/>
-                </ChakraProvider>
+                <Story/>
             </Center>
         ),
     ]

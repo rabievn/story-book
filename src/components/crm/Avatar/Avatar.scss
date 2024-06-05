@@ -1,3 +1,21 @@
 $kendo-avatar-sm-size: 32px;
 $kendo-avatar-md-size: 45px;
 $kendo-avatar-lg-size: 50px;
+
+.k-avatar.k-avatar-sm {
+  width: $kendo-avatar-sm-size;
+  height: $kendo-avatar-sm-size;
+  flex-basis: auto;
+}
+
+.k-avatar.k-avatar-md {
+  width: $kendo-avatar-md-size;
+  height: $kendo-avatar-md-size;
+  flex-basis: auto;
+}
+
+.k-avatar.k-avatar-lg {
+  width: $kendo-avatar-lg-size;
+  height: $kendo-avatar-lg-size;
+  flex-basis: auto;
+}

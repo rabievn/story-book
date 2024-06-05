@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import style from "./TaskCard.module.scss";
-import {Avatar} from "@progress/kendo-react-layout";
 import Checkbox, {CheckboxColorType, CheckboxSizeType} from "../Checkbox/Checkbox";
 import calendar from "./icons/calendar.svg";
 import notificationIcon from "./icons/notification.svg";
-import {AvatarColorType} from "../Avatar/Avatar";
+import Avatar, {AvatarColorType} from "../Avatar/Avatar";
 
 type CardStatusType = "Новая" | "В работе" | "Срок истекает" | "Просрочена";
 
@@ -67,7 +66,7 @@ const TaskCard: React.FC<TaskCardType> = ({
                     {numeric}
                 </div>
                 <div className={`${style.taskCard__userPhoto}`}>
-                    <Avatar rounded="full" type="text" themeColor={avatarTheme} size={"medium"}>
+                    <Avatar avatarTheme={avatarTheme} size={"medium"}>
                         {imgSrc ?
                             <img className={style.taskCard__userImage} src={imgSrc} alt="User image"/>
                             :
@@ -109,7 +108,7 @@ const TaskCard: React.FC<TaskCardType> = ({
                 <div className={`${style.taskCard__footer}`}>
                     <div className={`${style.taskCard__footerNumber}`}>{office}</div>
                     <div className={`${style.taskCard__footerCity}`}>{city}</div>
-                    <div className={`${style.taskCard__footerNotification}`}>
+                    <div className={`${style.taskCard__footerNotification} ${!notification && style.taskCard__notificationInvisible}`}>
                         <img className={`${style.taskCard__footerNotificationImg}`} src={notificationIcon}
                              alt="Notification icon"/>
                         <div className={`${style.taskCard__footerNotificationNumber}`}>

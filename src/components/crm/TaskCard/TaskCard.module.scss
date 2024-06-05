@@ -12,6 +12,11 @@ $pink: #D05EEB;
 $red: #FF0558;
 $orange: #FF8900;
 
+button {
+  all: unset;
+  cursor: pointer;
+}
+
 .taskCard {
   display: grid;
   grid-template-columns: 65px 1fr;
@@ -140,6 +145,10 @@ $orange: #FF8900;
 
   }
 
+  &__notificationInvisible {
+    visibility: hidden;
+  }
+
   &__footerNotification {
     position: relative;
   }
@@ -151,6 +160,7 @@ $orange: #FF8900;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
     background: $blue;
     color: $white;
     width: 28px;

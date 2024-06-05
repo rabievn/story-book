@@ -1,5 +1,6 @@
 import React, {ReactNode} from 'react';
 import {Avatar as KendoAvatar} from "@progress/kendo-react-layout";
+import "./Avatar.scss";
 
 export type AvatarColorType =
     'dark'
