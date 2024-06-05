@@ -7,6 +7,10 @@ $gray: #707070;
 $font-md: 14px;
 $fw-regular: 500;
 $main-font-family: Roboto, Arial, sans-serif;
+$green: #38D1C0;
+$pink: #D05EEB;
+$red: #FF0558;
+$orange: #FF8900;
 
 .taskCard {
   display: grid;
@@ -19,7 +23,6 @@ $main-font-family: Roboto, Arial, sans-serif;
   padding: 10px;
   background: $white;
   border-radius: $card-border-radius;
-
 
   &__left {
     display: flex;
@@ -39,7 +42,7 @@ $main-font-family: Roboto, Arial, sans-serif;
   }
 
   &__main {
-    // стили для главной части
+
   }
 
   &__header {
@@ -56,9 +59,26 @@ $main-font-family: Roboto, Arial, sans-serif;
     min-width: 86px;
     padding-inline: 13px;
     height: 26px;
-    background: red;
+    background: $gray;
     color: $white;
+
+    &.green {
+      background: $green;
+    }
+
+    &.red {
+      background: $red;
+    }
+
+    &.pink {
+      background: $pink;
+    }
+
+    &.orange {
+      background: $orange;
+    }
   }
+
 
   &__headerButtons {
     display: flex;
@@ -67,11 +87,23 @@ $main-font-family: Roboto, Arial, sans-serif;
   }
 
   &__moreOptions {
-    // стили для кнопки "еще"
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 29px;
+    height: 22px;
+
+    span {
+      width: 6px;
+      height: 6px;
+      background: $gray;
+      border-radius: 100%;
+    }
   }
 
   &__selectCheckbox {
-    // стили для чекбокса выбора
+
   }
 
   &__name {
@@ -87,23 +119,42 @@ $main-font-family: Roboto, Arial, sans-serif;
 
   &__description {
     margin-top: 11px;
+    color: $gray;
   }
 
   &__footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 11px;
+    margin-top: 16px;
   }
 
   &__footerNumber {
-    // стили для номера в подвале
+
   }
 
   &__footerCity {
-    // стили для города в подвале
+
   }
 
   &__footerNotification {
-    // стили для уведомления в подвале
+    position: relative;
+  }
+
+  &__footerNotificationNumber {
+    position: absolute;
+    top: -65%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $blue;
+    color: $white;
+    width: 28px;
+    height: 20px;
+    border-radius: 10px;
+  }
+
+  &__footerNotificationImg {
+    padding-right: 13px;
   }
 }

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.211" height="20.59" viewBox="0 0 25.211 20.59">
+    <g id="Group_17731" data-name="Group 17731" transform="translate(-1275.289 -19.873)">
+        <g id="Group_6642" data-name="Group 6642" transform="translate(-36.711 1.873)">
+            <path id="Union_138" data-name="Union 138"
+                  d="M0,13.018q0-.06,0-.12V2A2,2,0,0,1,2,0H22.211a2,2,0,0,1,2,2V12.9a2,2,0,0,1-2,2H2.889L0,18.626Z"
+                  transform="translate(1312.5 18.5)" fill="none" stroke="#707070" stroke-width="1"/>
+            <g id="Rectangle_2642" data-name="Rectangle 2642" transform="translate(1318.303 21.365)" fill="#fff"
+               stroke="#707070" stroke-width="1">
+                <rect width="12.606" height="1.146" stroke="none"/>
+                <rect x="0.5" y="0.5" width="11.606" height="0.146" fill="none"/>
+            </g>
+            <g id="Rectangle_2643" data-name="Rectangle 2643" transform="translate(1318.303 24.803)" fill="#fff"
+               stroke="#707070" stroke-width="1">
+                <rect width="12.606" height="1.146" stroke="none"/>
+                <rect x="0.5" y="0.5" width="11.606" height="0.146" fill="none"/>
+            </g>
+            <g id="Rectangle_2644" data-name="Rectangle 2644" transform="translate(1318.303 28.241)" fill="#fff"
+               stroke="#707070" stroke-width="1">
+                <rect width="12.606" height="1.146" stroke="none"/>
+                <rect x="0.5" y="0.5" width="11.606" height="0.146" fill="none"/>
+            </g>
+        </g>
+    </g>
+</svg>
