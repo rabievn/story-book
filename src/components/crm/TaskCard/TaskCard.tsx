@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import style from "./TaskCard.module.scss";
 import {Avatar} from "@progress/kendo-react-layout";
 import Checkbox, {CheckboxColorType, CheckboxSizeType} from "../Checkbox/Checkbox";
-import {AvatarType} from "../Comment/Comment";
 import calendar from "./icons/calendar.svg";
 import notificationIcon from "./icons/notification.svg";
+import {AvatarColorType} from "../Avatar/Avatar";
 
 type CardStatusType = "Новая" | "В работе" | "Срок истекает" | "Просрочена";
 
@@ -20,7 +20,7 @@ type TaskCardType = {
     isDark: boolean
     checkboxColor: CheckboxColorType
     checkboxSize: CheckboxSizeType
-    avatarTheme: AvatarType
+    avatarTheme: AvatarColorType
     city: string
     notification: number
     cardStatus: CardStatusType

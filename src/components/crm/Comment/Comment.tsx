@@ -4,21 +4,8 @@ import calendar from "./icons/calendar.svg";
 import GarbageIcon from "./icons/GarbageIcon";
 import EditIcon from "./icons/EditIcon";
 import '@progress/kendo-theme-default/dist/all.css';
-import {Avatar} from "@progress/kendo-react-layout";
 import Checkbox, {CheckboxColorType, CheckboxSizeType} from "../Checkbox/Checkbox";
-
-export type AvatarType =
-    'dark'
-    | 'base'
-    | 'error'
-    | 'info'
-    | 'inverse'
-    | 'light'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'tertiary'
-    | 'warning';
+import Avatar, {AvatarColorType} from "../Avatar/Avatar";
 
 type CommentPropsType = {
     numeric: number
@@ -35,7 +22,7 @@ type CommentPropsType = {
     onEdit: () => void
     checkboxColor: CheckboxColorType
     checkboxSize: CheckboxSizeType
-    avatarTheme: AvatarType
+    avatarTheme: AvatarColorType
 };
 
 const Comment: React.FC<CommentPropsType> = ({
@@ -75,7 +62,7 @@ const Comment: React.FC<CommentPropsType> = ({
                 </div>
                 <div className={`${style.comment__centerBottom}`}>
                     <div className={`${style.comment__centerBottomUser}`}>
-                        <Avatar rounded="full" type="text" themeColor={avatarTheme}>
+                        <Avatar avatarTheme={avatarTheme} size={"medium"}>
                             {imgSrc ?
                                 <img className={style.comment__centerBottomUserImage} src={imgSrc} alt="User image"/>
                                 :
