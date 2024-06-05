@@ -60,17 +60,16 @@ const TaskCard: React.FC<TaskCardType> = ({
         setIsChecked(prev => !prev);
     };
     return (
-        <div className={`${style.taskCard}`}>
+        <div className={`${style.taskCard} ${isDark && style.taskCardDark}`}>
             <div className={`${style.taskCard__left}`}>
                 <div className={`${style.taskCard__index}`}>
                     {numeric}
                 </div>
                 <div className={`${style.taskCard__userPhoto}`}>
                     <Avatar avatarTheme={avatarTheme} size={"medium"}>
-                        {imgSrc ?
-                            <img className={style.taskCard__userImage} src={imgSrc} alt="User image"/>
-                            :
-                            user.name[0]
+                        {imgSrc
+                            ? <img className={style.taskCard__userImage} src={imgSrc} alt="User image"/>
+                            : user.name[0]
                         }
                     </Avatar>
                 </div>

@@ -1,8 +1,10 @@
 $blue-border: #B2DCFF;
+$dark-blue-border: #005C98;
 $blue: #26BAF1;
 $white: #FFFFFF;
 $card-border-radius: 14px;
 $black: #000000;
+$bg-black: #1F1F1F;
 $gray: #707070;
 $font-md: 14px;
 $fw-regular: 500;
@@ -26,7 +28,7 @@ button {
   width: 280px;
   border: 1px solid $blue-border;
   padding: 10px;
-  background: $white;
+  background-color: $white;
   border-radius: $card-border-radius;
 
   &__left {
@@ -171,4 +173,10 @@ button {
   &__footerNotificationImg {
     padding-right: 13px;
   }
+}
+
+.taskCardDark {
+  background-color: $bg-black;
+  border: 1px solid $dark-blue-border;
+  color: $white;
 }
