@@ -118,6 +118,10 @@ $orange: #FF8900;
   }
 
   &__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
     margin-top: 11px;
     color: $gray;
   }

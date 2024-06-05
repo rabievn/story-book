@@ -7,6 +7,11 @@ $name-color: rgba(0, 0, 0, 0.5);
 $dark-mode-black: #121212;
 $dark-mode-gray: #707070;
 
+button {
+  all: unset;
+  cursor: pointer;
+}
+
 .comment {
   display: grid;
   grid-template-columns: 41px 1fr 31px;
