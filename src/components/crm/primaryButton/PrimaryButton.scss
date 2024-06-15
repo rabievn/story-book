@@ -1,0 +1,438 @@
+$white: #ffffff;
+$black: #000000;
+$gray: #cecece;
+$dark-gray: #454545;
+$secondary-gray: #b9b9b9;
+$secondary-dark-gray: #5c5c5c;
+$bg-gray: #222222;
+$bright-purple: #ac31f9;
+$dark-bright-purple: #7009b6;
+$blue: #26c2ef;
+$dark-blue: #0092cd;
+$deep-blue: #4c28d1;
+$gradient-blue: linear-gradient(98deg, #2699fb 0%, #1cafbb 50%, #28b6c9 100%);
+$gradient-dark-blue: transparent linear-gradient(105deg, #00c4d2 0%, #0070c9 100%) 0% 0% no-repeat padding-box;
+$pink: #e37fa5;
+$dark-pink: #702e80;
+$gradient-pink: transparent linear-gradient(105deg, #ff6060 0%, #db4c8c 100%) 0% 0% no-repeat padding-box;
+$gradient-dark-pink: transparent linear-gradient(105deg, #6f2e81 0%, #db4c8c 100%) 0% 0% no-repeat padding-box;
+$green: #3dbc8a;
+$dark-green: #0d4830;
+$gradient-green: transparent linear-gradient(107deg, #59ac8b 0%, #67d9bf 100%) 0% 0% no-repeat padding-box;
+$dark-gradient-green: transparent linear-gradient(107deg, #417661 0%, #58b5a0 100%) 0% 0% no-repeat padding-box;
+$purple: #c52e9c;
+$dark-purple: #961874;
+$orange: #ff8524;
+$dark-orange: #962e00;
+$gradient-orange: transparent linear-gradient(105deg, #ffbc60 0%, #ff8726 43%, #ff5800 100%) 0% 0% no-repeat padding-box;
+$dark-gradient-orange: transparent linear-gradient(105deg, #ac7d00 0%, #962e12 100%) 0% 0% no-repeat padding-box;
+$cyan: #1caebc;
+$dark-cyan: #4425b9;
+$gradient-cyan: transparent linear-gradient(107deg, #2699fb 0%, #1cafbb 50%, #28b6c9 100%) 0% 0% no-repeat padding-box;
+$dark-gradient-cyan: transparent linear-gradient(107deg, #6826fb 0%, #156995 50%, #17727e 100%) 0% 0% no-repeat padding-box;
+$violet: #8773dd;
+$dark-violet: #6900b1;
+$gradient-violet: transparent linear-gradient(107deg, #ca78fd 0%, #ab2fff 43%, #8a58fa 100%) 0% 0% no-repeat padding-box;
+$dark-gradient-violet: transparent linear-gradient(107deg, #7000b5 0%, #7000be 50%, #47009a 100%) 0% 0% no-repeat padding-box;
+
+$border-radius-xsm: 4px;
+$border-radius-sm: 10px;
+$border-radius-md: 14px;
+$border-radius-lg: 27px;
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  outline: 2px solid $gray;
+  border-radius: $border-radius-xsm;
+  border: none;
+  padding-inline: 16px;
+  padding-block: 16px;
+  min-width: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Montserrat, Arial, sans-serif;
+
+  & > *:last-child {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.button.exist {
+  svg path {
+    stroke: $white;
+  }
+}
+
+.button.transparent {
+  svg path {
+    stroke: $black;
+  }
+}
+
+.buttonDark.exist,
+.buttonDark.transparent {
+  svg path {
+    stroke: $white;
+  }
+}
+
+.button {
+  &.xsm {
+    border-radius: $border-radius-xsm;
+  }
+
+  &.sm {
+    border-radius: $border-radius-sm;
+  }
+
+  &.md {
+    border-radius: $border-radius-md;
+  }
+
+  &.lg {
+    border-radius: $border-radius-lg;
+  }
+}
+
+.button {
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.bgGray {
+    background-color: $bg-gray;
+    color: $white;
+    outline: 2px solid $dark-gray;
+
+    svg path {
+      stroke: $white;
+    }
+  }
+}
+
+.button {
+  &.svg-gray svg path {
+    stroke: $gray;
+  }
+
+  &.svg-secondary-gray svg path {
+    stroke: $secondary-gray;
+  }
+
+  &.svg-bright-purple svg path {
+    stroke: $bright-purple;
+  }
+
+  &.svg-blue svg path {
+    stroke: $blue;
+  }
+
+  &.svg-deep-blue svg path {
+    stroke: $deep-blue;
+  }
+
+  &.svg-pink svg path {
+    stroke: $pink;
+  }
+
+  &.svg-green svg path {
+    stroke: $green;
+  }
+
+  &.svg-purple svg path {
+    stroke: $purple;
+  }
+
+  &.svg-orange svg path {
+    stroke: $orange;
+  }
+
+  &.svg-cyan svg path {
+    stroke: $cyan;
+  }
+
+  &.svg-violet svg path {
+    stroke: $violet;
+  }
+}
+
+.button.transparent {
+  color: $black;
+
+  &.gray {
+    outline-color: $gray;
+  }
+
+  &.secondary-gray {
+    outline-color: $secondary-gray;
+  }
+
+  &.bright-purple {
+    outline-color: $bright-purple;
+  }
+
+  &.blue {
+    outline-color: $blue;
+  }
+
+  &.deep-blue {
+    outline-color: $deep-blue;
+  }
+
+  &.pink {
+    outline-color: $pink;
+  }
+
+  &.green {
+    outline-color: $green;
+  }
+
+  &.purple {
+    outline-color: $purple;
+  }
+
+  &.orange {
+    outline-color: $orange;
+  }
+
+  &.cyan {
+    outline-color: $cyan;
+  }
+
+  &.violet {
+    outline-color: $violet;
+  }
+}
+
+.button.exist {
+  color: $white;
+
+  &.gray {
+    background-color: $gray;
+    outline: none;
+  }
+
+  &.secondary-gray {
+    background-color: $secondary-gray;
+    outline: none;
+  }
+
+  &.bright-purple {
+    background-color: $bright-purple;
+    outline: none;
+  }
+
+  &.blue {
+    background-color: $blue;
+    outline: none;
+  }
+
+  &.deep-blue {
+    background-color: $deep-blue;
+    outline: none;
+  }
+
+  &.gradient-blue {
+    background: $gradient-blue;
+    outline: none;
+  }
+
+  &.pink {
+    background-color: $pink;
+    outline: none;
+  }
+
+  &.gradient-pink {
+    background: $gradient-pink;
+    outline: none;
+  }
+
+  &.green {
+    background-color: $green;
+    outline: none;
+  }
+
+  &.gradient-green {
+    background: $gradient-green;
+    outline: none;
+  }
+
+  &.purple {
+    background-color: $purple;
+    outline: none;
+  }
+
+  &.orange {
+    background-color: $orange;
+    outline: none;
+  }
+
+  &.gradient-orange {
+    background: $gradient-orange;
+    outline: none;
+  }
+
+  &.cyan {
+    background-color: $cyan;
+    outline: none;
+  }
+
+  &.gradient-cyan {
+    background: $gradient-cyan;
+    outline: none;
+  }
+
+  &.violet {
+    background-color: $violet;
+    outline: none;
+  }
+
+  &.gradient-violet {
+    background: $gradient-violet;
+    outline: none;
+  }
+}
+
+//DARK-THEME
+.buttonDark.transparent {
+  color: $white;
+
+  &.gray {
+    outline-color: $gray;
+  }
+
+  &.secondary-gray {
+    outline-color: $secondary-gray;
+  }
+
+  &.bright-purple {
+    outline-color: $dark-bright-purple;
+  }
+
+  &.blue {
+    outline-color: $dark-blue;
+  }
+
+  &.pink {
+    outline-color: $dark-pink;
+  }
+
+  &.green {
+    outline-color: $dark-green;
+  }
+
+  &.purple {
+    outline-color: $dark-purple;
+  }
+
+  &.orange {
+    outline-color: $dark-orange;
+  }
+
+  &.cyan {
+    outline-color: $dark-cyan;
+  }
+
+  &.violet {
+    outline-color: $dark-violet;
+  }
+}
+
+.buttonDark.exist {
+  color: $white;
+
+  &.gray {
+    background-color: $gray;
+    outline: none;
+  }
+
+  &.secondary-gray {
+    background-color: $secondary-gray;
+    outline: none;
+  }
+
+  &.bright-purple {
+    background-color: $dark-bright-purple;
+    outline: none;
+  }
+
+  &.blue {
+    background-color: $dark-blue;
+    outline: none;
+  }
+
+  &.deep-blue {
+    background-color: $deep-blue;
+    outline: none;
+  }
+
+  &.gradient-blue {
+    background: $dark-gradient-cyan;
+    outline: none;
+  }
+
+  &.pink {
+    background-color: $dark-pink;
+    outline: none;
+  }
+
+  &.gradient-pink {
+    background: $dark-gradient-cyan;
+    outline: none;
+  }
+
+  &.green {
+    background-color: $dark-green;
+    outline: none;
+  }
+
+  &.gradient-green {
+    background: $dark-gradient-green;
+    outline: none;
+  }
+
+  &.purple {
+    background-color: $dark-purple;
+    outline: none;
+  }
+
+  &.orange {
+    background-color: $dark-orange;
+    outline: none;
+  }
+
+  &.gradient-orange {
+    background: $dark-gradient-orange;
+    outline: none;
+  }
+
+  &.cyan {
+    background-color: $dark-cyan;
+    outline: none;
+  }
+
+  &.gradient-cyan {
+    background: $dark-gradient-cyan;
+    outline: none;
+  }
+
+  &.violet {
+    background-color: $dark-violet;
+    outline: none;
+  }
+
+  &.gradient-violet {
+    background: $dark-gradient-violet;
+    outline: none;
+  }
+}
